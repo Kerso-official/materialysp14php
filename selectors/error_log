@@ -1,0 +1,39 @@
+[11-Jan-2025 22:49:33 Europe/Warsaw] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'class' in 'where clause' in /home/dm70016/materialysp14.kerso.dev/selectors/class_selector.php:24
+Stack trace:
+#0 /home/dm70016/materialysp14.kerso.dev/selectors/class_selector.php(24): PDOStatement->execute()
+#1 {main}
+  thrown in /home/dm70016/materialysp14.kerso.dev/selectors/class_selector.php on line 24
+[11-Jan-2025 22:51:13 Europe/Warsaw] PHP Warning:  Undefined array key "redirectclass" in /home/dm70016/materialysp14.kerso.dev/selectors/lesson_viewer.php on line 8
+[11-Jan-2025 23:18:26 Europe/Warsaw] PHP Parse error:  syntax error, unexpected token "}", expecting "," or ";" in /home/dm70016/materialysp14.kerso.dev/selectors/class_selector.php on line 27
+[11-Jan-2025 23:19:23 Europe/Warsaw] PHP Warning:  Undefined variable $class in /home/dm70016/materialysp14.kerso.dev/selectors/class_selector.php on line 6
+[11-Jan-2025 23:19:26 Europe/Warsaw] PHP Warning:  Undefined variable $class in /home/dm70016/materialysp14.kerso.dev/selectors/class_selector.php on line 6
+[11-Jan-2025 23:19:44 Europe/Warsaw] PHP Warning:  Undefined variable $class in /home/dm70016/materialysp14.kerso.dev/selectors/class_selector.php on line 6
+[11-Jan-2025 23:30:47 Europe/Warsaw] PHP Warning:  Undefined variable $redirectClass in /home/dm70016/materialysp14.kerso.dev/selectors/lesson_viewer.php on line 96
+[12-Jan-2025 09:21:49 Europe/Warsaw] PHP Fatal error:  Uncaught Error: Call to undefined function apcu_fetch() in /home/dm70016/materialysp14.kerso.dev/selectors/class_selector.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/dm70016/materialysp14.kerso.dev/selectors/class_selector.php on line 47
+[12-Jan-2025 09:21:53 Europe/Warsaw] PHP Fatal error:  Uncaught Error: Call to undefined function apcu_fetch() in /home/dm70016/materialysp14.kerso.dev/selectors/class_selector.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/dm70016/materialysp14.kerso.dev/selectors/class_selector.php on line 47
+[12-Jan-2025 09:21:55 Europe/Warsaw] PHP Fatal error:  Uncaught Error: Call to undefined function apcu_fetch() in /home/dm70016/materialysp14.kerso.dev/selectors/class_selector.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/dm70016/materialysp14.kerso.dev/selectors/class_selector.php on line 47
+[12-Jan-2025 09:22:06 Europe/Warsaw] PHP Fatal error:  Uncaught Error: Call to undefined function apcu_fetch() in /home/dm70016/materialysp14.kerso.dev/selectors/class_selector.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/dm70016/materialysp14.kerso.dev/selectors/class_selector.php on line 47
+[12-Jan-2025 09:27:32 Europe/Warsaw] PHP Fatal error:  Uncaught Exception: Serialization of 'PDO' is not allowed in /home/dm70016/materialysp14.kerso.dev/selectors/lesson_viewer.php:28
+Stack trace:
+#0 /home/dm70016/materialysp14.kerso.dev/selectors/lesson_viewer.php(28): apcu_store()
+#1 /home/dm70016/materialysp14.kerso.dev/selectors/lesson_viewer.php(35): Database::getInstance()
+#2 {main}
+  thrown in /home/dm70016/materialysp14.kerso.dev/selectors/lesson_viewer.php on line 28
+[12-Jan-2025 09:29:26 Europe/Warsaw] PHP Fatal error:  Uncaught Exception: Serialization of 'PDO' is not allowed in /home/dm70016/materialysp14.kerso.dev/selectors/lesson_viewer.php:28
+Stack trace:
+#0 /home/dm70016/materialysp14.kerso.dev/selectors/lesson_viewer.php(28): apcu_store()
+#1 /home/dm70016/materialysp14.kerso.dev/selectors/lesson_viewer.php(66): Database::getInstance()
+#2 {main}
+  thrown in /home/dm70016/materialysp14.kerso.dev/selectors/lesson_viewer.php on line 28

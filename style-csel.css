@@ -1,0 +1,143 @@
+body {
+    background-color: #282c34;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.content {
+    position: relative;
+    text-align: center;
+    color: white;
+    top: 50%;
+  }
+
+.title {
+    margin-top: 50px;
+}
+
+.dzial
+{
+	width: 480px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	text-align: center;
+	font-weight: 700;
+	padding: 5px;
+	border-radius: 5px;
+}
+
+.dzialH
+{
+	width: 480px;
+	text-align: left;
+	font-size: 28px;
+	padding-left: 11px;
+}
+
+.dzialD
+{
+	width: 480px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.numery
+{
+	float: left;
+	width: 35px;
+	margin-left: 5px;	
+}
+
+.numer
+{
+	width: 25px;
+	height: 25px;
+	padding: 5px;
+	padding-top: 10px;
+	margin-left: 5px;
+	margin-right: 0px;
+	margin-bottom: 5px;
+	margin-top: 5px;
+	background-color: #006633;
+	border-radius: 5px;
+	color: #fff;
+	text-align: center;
+	font-weight: 400;
+}
+
+.lekcje
+{
+	float: left;
+	width: 410px;
+	margin-left: 10px;		
+}
+
+.lekcja
+{
+	width: 410px;
+	height: 25px;
+	padding: 5px;
+	padding-top: 10px;
+	margin-left: 0px;
+	margin-bottom: 5px;
+	margin-top: 5px;
+	background-color: #006633;
+	border-radius: 5px;
+}
+
+.lekcja a
+{
+	color: #fff;
+	text-decoration: none;
+	font-weight: 400;
+	display: block;
+    width: 410px;
+    height: 25px;
+}
+
+.lekcja:hover
+{
+	background-color: #99ffcc;
+}
+
+.lekcja:hover a
+{
+	color: #330000;
+}
+
+#blink_text{	
+    animation-name:blink;
+    animation-duration:2s;
+    animation-timing-function:ease-in;
+    animation-iteration-count:Infinite;
+    }
+  
+  @keyframes blink{
+    0%{color:red;}
+    50%{color:white;}
+    100%{color:red;}
+  }
+
+  .title {
+	font-size: 50px;
+	margin: 0.5rem;
+	background: linear-gradient(to right, #6666ff, #0099ff, #00ff00, #ff3399, #6666ff);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	animation: rainbow_animation 6s ease-in-out infinite;
+	background-size: 400% 100%;
+	text-align: center;
+  }
+
+  /* Rainbow animation for title */
+@keyframes rainbow_animation {
+	0%, 100% {
+	  background-position: 0 0;
+	}
+	50% {
+	  background-position: 100% 0;
+	}
+  }
+  

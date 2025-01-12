@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materiały SP14</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="particles-js"></div>
+<!-- Główny content strony -->
+<div class="content">
+    <noscript><h1 id="blink_text">Proszę uruchomić JavaScript w swojej przeglądarce.</h1></noscript>
+    <h1 class="title">Materiały SP14</h1>
+    <p class="subtitle">materialysp14.pl</p>
+
+    <!-- Guziki klas 1-3 -->
+    <div class="button-group">
+        <button class="class-button" onclick="classSelect(1)">1</button>
+        <button class="class-button" onclick="classSelect(2)">2</button>
+        <button class="class-button" onclick="classSelect(3)">3</button>
+    </div>
+
+    <!-- Guziki klas 4-8 -->
+    <div class="button-group">
+        <button class="class-button-old" onclick="classSelect(4)">4</button>
+        <button class="class-button-old" onclick="classSelect(5)">5</button>
+        <button class="class-button-old" onclick="classSelect(6)">6</button>
+        <button class="class-button-old" onclick="classSelect(7)">7</button>
+        <button class="class-button-old" onclick="classSelect(8)">8</button>
+    </div>
+
+    <hr style="width: 50%;"/>
+
+    <h1>Tutoriale</h1>
+    <p>Wszystkie tutoriale możecie znaleźć na naszym <a href="https://www.youtube.com/@jozeflompa5875/videos" style="color: red">kanale youtube</a></p>
+
+    <hr style="width: 50%;"/>
+    <h1>Informacje</h1>
+    <p>Na tej stronie została użyta biblioteka <a href="https://github.com/VincentGarreau/particles.js" style="color: aqua;">particles.js</a></p>
+    <p>Wszystkie prawa zastrzeżone <a href="https://kerso.dev" style="color: lightskyblue;">kerso.dev</a> <span id="year"></span></p>
+</div>
+<!-- Biblioteka Particles JS -->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<!-- Skrypt aplikacji -->
+<script src="./app.js"></script>
+<script>
+    // Funkcja wykonywana po kliknięciu guzika z klasą
+    function classSelect(int) {
+        window.location.href = `./selectors/class_selector.php?klasa=${int}`
+    }
+</script>
+</body>
+</html>
