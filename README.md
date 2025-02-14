@@ -4,6 +4,7 @@
 > Projekt jest w fazie DEVELOPMENTU
 
 Strona internetowa zrobiona dla Szkoły Podstawowej nr 14 w Łodzi.
+
 Serwis do przechowywania lekcji.
 
 **LICENCJA [CC-BY-NC](https://creativecommons.org/licenses/by-nc/4.0/deed.pl)**
