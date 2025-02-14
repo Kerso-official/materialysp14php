@@ -26,7 +26,7 @@ Jeśli napotkasz jakiekolwiek problemy z połączeniem z bazą danych MYSQL moż
 
 lub
 
-<a href="mailto:kerso8877@gmail.com">kerso8877@gmail.com (e-mail prioretytowy)</a>)
+<a href="mailto:kerso8877@gmail.com">kerso8877@gmail.com (e-mail prioretytowy)</a>
 
 <hr/>
 
