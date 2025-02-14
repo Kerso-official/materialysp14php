@@ -9,15 +9,6 @@ body, html {
 	overflow: hidden; /* Prevent unwanted scrolling with full background */
   }
   
-  /* Background container for particles.js */
-  #particles-js {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	background: #282c34; /* Fallback for particles.js */
-	z-index: 0;
-  }
-  
   /* Centered content styling */
   .content {
 	position: relative;

@@ -43,7 +43,6 @@ if ($lessons === false) {
     <title>KLASA <?= htmlspecialchars($class) ?></title>
 </head>
 <body>
-    <div id="particles-js"></div>
     <div class="content">
         <h1 class="title">KLASA <?= htmlspecialchars($class) ?></h1>
         
