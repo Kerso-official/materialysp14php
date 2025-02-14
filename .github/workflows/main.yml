@@ -1,4 +1,5 @@
-name: Build and deploy
+name: Deploy PHP Application
+
 on:
   push:
     branches: [main]
@@ -10,12 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - name: Checkout repository
-        uses: actions/checkout@main
-      - name: Download artifact
-        uses: actions/download-artifact@main
-        with: 
-          name: dist
-          path: dist
+        uses: actions/checkout@v2
+
       - name: Sync files to hosting
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with: 
