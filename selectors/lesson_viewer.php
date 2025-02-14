@@ -5,8 +5,14 @@ $dsn = "mysql:host=localhost;dbname=dm70016_materialysp14;charset=utf8mb4";
 $username = "dm70016_materialysp14";
 $password = "&76$3GK#G0EE";
 
-// PDO instance, initially set to null
-$pdo = null;
+// Establish PDO connection immediately
+try {
+    $pdo = new PDO($dsn, $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    echo "Error: " . $e->getMessage();
+    exit;
+}
 
 // Get class parameter from URL
 $class = $_GET['redirectclass'] ?? null;
@@ -29,26 +35,9 @@ if ($class > 8 || $class === 0) {
     exit;
 }
 
-// Lazy initialization of the PDO object
-function getPDOInstance() {
-    global $pdo, $dsn, $username, $password;
-    
-    if ($pdo === null) {
-        try {
-            $pdo = new PDO($dsn, $username, $password);
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        } catch (PDOException $e) {
-            echo "Error: " . $e->getMessage();
-            exit;
-        }
-    }
-    return $pdo;
-}
-
 // Check if lesson_id is provided
 if (isset($_GET['lesson_id'])) {
     $lessonId = $_GET['lesson_id'];
-    $pdo = getPDOInstance(); // Initialize PDO only when needed
     $stmt = $pdo->prepare("SELECT * FROM lessons WHERE id = :id");
     $stmt->execute(['id' => $lessonId]);
     $lesson = $stmt->fetch(PDO::FETCH_ASSOC);

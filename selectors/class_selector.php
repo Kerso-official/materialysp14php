@@ -5,31 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style-csel.css">
 <?php
-// Singleton dla połączenia z bazą danych
-class Database {
-    private static $instance = null;
-    private $connection;
+// Direct database connection
+$dsn = "mysql:host=localhost;dbname=dm70016_materialysp14;charset=utf8mb4";
+$username = "dm70016_materialysp14";
+$password = "&76$3GK#G0EE";
 
-    private function __construct() {
-        $dsn = "mysql:host=localhost;dbname=dm70016_materialysp14;charset=utf8mb4";
-        $username = "dm70016_materialysp14";
-        $password = "&76$3GK#G0EE";
-
-        try {
-            $this->connection = new PDO($dsn, $username, $password);
-            $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        } catch (PDOException $e) {
-            echo "Error: " . $e->getMessage();
-            exit;
-        }
-    }
-
-    public static function getInstance() {
-        if (self::$instance === null) {
-            self::$instance = new self();
-        }
-        return self::$instance->connection;
-    }
+try {
+    $pdo = new PDO($dsn, $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    echo "Error: " . $e->getMessage();
+    exit;
 }
 
 // Weryfikacja parametru klasy
@@ -38,9 +24,6 @@ if ($class === null || !filter_var($class, FILTER_VALIDATE_INT) || $class <= 0 |
     echo '<h1 id="blink_text">Wybrano nieprawidłową klasę</h1>';
     exit;
 }
-
-// Połączenie z bazą danych przez Singleton
-$pdo = Database::getInstance();
 
 // Buforowanie zapytań
 $cacheKey = "lessons_class_$class";
