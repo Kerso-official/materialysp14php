@@ -43,10 +43,12 @@ if ($lessons === false) {
     <title>KLASA <?= htmlspecialchars($class) ?></title>
 </head>
 <body>
-    <a href="../" style="color: aqua;">← Powrót do strony głównej</a>
+    <div id="particles-js"></div>
     <div class="content">
         <h1 class="title">KLASA <?= htmlspecialchars($class) ?></h1>
         
+        <a href="../" style="color: aqua;">← Powrót do strony głównej</a>
+
         <?php if ($lessons): ?>
             <div class="dzial">
                 <div class="dzialH"> TEST </div>
@@ -69,5 +71,9 @@ if ($lessons === false) {
             <p>Nie znaleziono lekcji w tej klasie...</p>
         <?php endif; ?>
     </div>
+    <!-- Biblioteka Particles JS -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- Skrypt aplikacji -->
+    <script src="../app.js"></script>
 </body>
 </html>
