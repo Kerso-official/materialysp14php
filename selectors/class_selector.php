@@ -60,7 +60,7 @@
                 <div class="dzial">
                     <div class="dzialH"><?= htmlspecialchars($lessons[0]['section_title']) ?></div>
                     <p><?= htmlspecialchars($lessons[0]['section_description']) ?></p>
-                    <div class="dzialC">
+                    <div class="dzialD">
                         <?php foreach ($lessons as $index => $lesson): ?>
                             <div class="numery">
                                 <div class="numer"><?= ($index + 1) ?>.</div>
