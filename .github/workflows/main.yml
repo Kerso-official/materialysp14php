@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    name: Deploy 🚀
+    name: Test Deploy 🚀
     runs-on: ubuntu-latest
     steps: 
       - name: Checkout repository
@@ -17,5 +17,5 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with: 
           server: ftp.dm70016.domenomania.eu
-          username: github@kerso.dev
-          password: ${{ secrets.ftp_pass }}
+          username: githubtest@kerso.dev
+          password: ${{ secrets.ftp_pass2 }}
