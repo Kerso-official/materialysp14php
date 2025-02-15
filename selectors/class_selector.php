@@ -6,9 +6,8 @@
     <link rel="stylesheet" href="../style-csel.css">
     <?php
     require_once __DIR__ . '/../vendor/autoload.php';
-
     use Dotenv\Dotenv;
-
+    
     $dotenv = Dotenv::createImmutable(__DIR__ . '/..');
     $dotenv->load();
 
@@ -17,8 +16,10 @@
     $password = $_ENV['MYSQL_PASS'];
 
     try {
-        $pdo = new PDO($dsn, $username, $password);
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $pdo = new PDO($dsn, $username, $password, [
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+            PDO::ATTR_PERSISTENT => true
+        ]);
     } catch (PDOException $e) {
         echo "Error: " . $e->getMessage();
         exit;
@@ -30,18 +31,22 @@
         exit;
     }
 
+    $forceRefresh = isset($_GET['refresh']) && $_GET['refresh'] == 1;
     $cacheKey = "sections_class_$class";
-    $sections = apcu_fetch($cacheKey);
+    
+    if ($forceRefresh) {
+        apcu_delete($cacheKey);
+    }
 
+    $sections = apcu_fetch($cacheKey);
+    
     if ($sections === false) {
-        $stmt = $pdo->prepare("
-            SELECT s.id AS section_id, s.title AS section_title, s.description AS section_description, 
-                   l.id AS lesson_id, l.title AS lesson_title
-            FROM sections s
-            LEFT JOIN lessons l ON s.id = l.section_id
-            WHERE l.class = :class
-            ORDER BY s.id, l.id
-        ");
+        $stmt = $pdo->prepare("SELECT s.id AS section_id, s.title AS section_title, s.description AS section_description, 
+                                       l.id AS lesson_id, l.title AS lesson_title
+                                FROM sections s
+                                LEFT JOIN lessons l ON s.id = l.section_id
+                                WHERE l.class = :class
+                                ORDER BY s.id, l.id");
         $stmt->execute(['class' => $class]);
         $sections = $stmt->fetchAll(PDO::FETCH_GROUP | PDO::FETCH_ASSOC);
         apcu_store($cacheKey, $sections, 600);
@@ -54,16 +59,17 @@
         <h1 class="title">KLASA <?= htmlspecialchars($class) ?></h1>
         
         <a href="../" style="color: aqua;">← Powrót do strony głównej</a>
+        <a href="?klasa=<?= urlencode($class) ?>&refresh=1" style="color: red; margin-left: 10px;">↻ Odśwież dane</a>
 
         <?php if ($sections): ?>
             <?php foreach ($sections as $section_id => $lessons): ?>
                 <div class="dzial">
-                    <div class="dzialH"><?= htmlspecialchars($lessons[0]['section_title']) ?></div>
+                    <div class="dzialH"> <?= htmlspecialchars($lessons[0]['section_title']) ?> </div>
                     <p><?= htmlspecialchars($lessons[0]['section_description']) ?></p>
                     <div class="dzialD">
                         <?php foreach ($lessons as $index => $lesson): ?>
                             <div class="numery">
-                                <div class="numer"><?= ($index + 1) ?>.</div>
+                                <div class="numer"> <?= ($index + 1) ?>. </div>
                             </div>
                             <div class="lekcje">
                                 <div class="lekcja">
