@@ -3,131 +3,24 @@ body, html {
 	margin: 0;
 	padding: 0;
 	height: 100%;
-	background: white;
+	background: #f5f5f5; /* Light gray for better contrast */
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	scroll-behavior: smooth;
-	overflow: hidden; /* Prevent unwanted scrolling with full background */
-  }
-  
-  /* Centered content styling */
-  .content {
+	overflow-x: hidden; /* Prevent horizontal scrolling */
+	color: #333;
+}
+
+/* Centered content styling */
+.content {
 	position: relative;
 	z-index: 1; /* Ensures content is above particles.js */
 	text-align: center;
-	color: white;
 	top: 50%;
 	transform: translateY(-50%);
-  }
+}
 
+/* Main title styling */
 .title {
-    margin-top: 50px;
-}
-
-.dzial
-{
-	width: 480px;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 20px;
-	text-align: center;
-	font-weight: 700;
-	padding: 5px;
-	border-radius: 5px;
-}
-
-.dzialH
-{
-	width: 480px;
-	text-align: left;
-	font-size: 28px;
-	padding-left: 11px;
-}
-
-.dzialD
-{
-	width: 480px;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.numery
-{
-	float: left;
-	width: 35px;
-	margin-left: 5px;	
-}
-
-.numer
-{
-	width: 25px;
-	height: 25px;
-	padding: 5px;
-	padding-top: 10px;
-	margin-left: 5px;
-	margin-right: 0px;
-	margin-bottom: 5px;
-	margin-top: 5px;
-	background-color: #006633;
-	border-radius: 5px;
-	color: #fff;
-	text-align: center;
-	font-weight: 400;
-}
-
-.lekcje
-{
-	float: left;
-	width: 410px;
-	margin-left: 10px;		
-}
-
-.lekcja
-{
-	width: 410px;
-	height: 25px;
-	padding: 5px;
-	padding-top: 10px;
-	margin-left: 0px;
-	margin-bottom: 5px;
-	margin-top: 5px;
-	background-color: #006633;
-	border-radius: 5px;
-}
-
-.lekcja a
-{
-	color: #fff;
-	text-decoration: none;
-	font-weight: 400;
-	display: block;
-    width: 410px;
-    height: 25px;
-}
-
-.lekcja:hover
-{
-	background-color: #99ffcc;
-}
-
-.lekcja:hover a
-{
-	color: #330000;
-}
-
-#blink_text{	
-    animation-name:blink;
-    animation-duration:2s;
-    animation-timing-function:ease-in;
-    animation-iteration-count:Infinite;
-    }
-  
-  @keyframes blink{
-    0%{color:red;}
-    50%{color:white;}
-    100%{color:red;}
-  }
-
-  .title {
 	font-size: 50px;
 	margin: 0.5rem;
 	background: linear-gradient(to right, #6666ff, #0099ff, #00ff00, #ff3399, #6666ff);
@@ -137,9 +30,9 @@ body, html {
 	animation: rainbow_animation 6s ease-in-out infinite;
 	background-size: 400% 100%;
 	text-align: center;
-  }
+}
 
-  /* Rainbow animation for title */
+/* Rainbow animation */
 @keyframes rainbow_animation {
 	0%, 100% {
 	  background-position: 0 0;
@@ -147,5 +40,106 @@ body, html {
 	50% {
 	  background-position: 100% 0;
 	}
-  }
-  
+}
+
+/* Section Container */
+.dzial {
+	width: 90%;
+	max-width: 600px;
+	margin: 20px auto;
+	padding: 15px;
+	border-radius: 8px;
+	background: #ffffff; /* White background for clarity */
+	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+	text-align: left;
+	transition: 0.3s ease-in-out;
+}
+
+/* Section Hover Effect */
+.dzial:hover {
+	transform: scale(1.02);
+	box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Section Title */
+.dzialH {
+	font-size: 24px;
+	font-weight: bold;
+	color: #006633;
+	margin-bottom: 5px;
+}
+
+/* Section Description */
+.dzialD {
+	font-size: 14px;
+	color: #555;
+	margin-bottom: 10px;
+	line-height: 1.5;
+}
+
+/* Lesson Number Styling */
+.numery {
+	float: left;
+	width: 40px;
+	margin-left: 5px;
+}
+
+.numer {
+	width: 30px;
+	height: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 5px;
+	background-color: #006633;
+	border-radius: 50%;
+	color: white;
+	text-align: center;
+	font-weight: bold;
+	font-size: 14px;
+	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Lessons Container */
+.lekcje {
+	float: left;
+	width: calc(100% - 50px);
+	margin-left: 10px;
+}
+
+/* Lesson Item */
+.lekcja {
+	width: 100%;
+	padding: 10px;
+	margin: 5px 0;
+	background-color: #006633;
+	border-radius: 5px;
+	transition: 0.3s ease-in-out;
+}
+
+.lekcja a {
+	color: #fff;
+	text-decoration: none;
+	font-weight: bold;
+	display: block;
+}
+
+/* Hover Effect */
+.lekcja:hover {
+	background-color: #99ffcc;
+	transform: translateX(5px);
+}
+
+.lekcja:hover a {
+	color: #330000;
+}
+
+/* Blinking Error Text */
+#blink_text {	
+	animation: blink 2s ease-in infinite;
+}
+
+@keyframes blink {
+	0%, 100% { color: red; }
+	50% { color: white; }
+}
