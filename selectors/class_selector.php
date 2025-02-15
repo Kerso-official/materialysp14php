@@ -65,7 +65,7 @@
             <?php foreach ($sections as $section_id => $lessons): ?>
                 <div class="dzial">
                     <div class="dzialH"> <?= htmlspecialchars($lessons[0]['section_title']) ?> </div>
-                    <p><?= htmlspecialchars($lessons[0]['section_description']) ?></p>
+                    <span style="font-size: 16px; font-weight: 400;"><?= htmlspecialchars($lessons[0]['section_description']) ?></span>
                     <div class="dzialD">
                         <?php foreach ($lessons as $index => $lesson): ?>
                             <div class="numery">
