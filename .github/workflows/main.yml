@@ -8,7 +8,7 @@ on:
 jobs:
   deploy:
     name: Deploy 🚀
-    runs-on: ubuntu-latest
+    runs-on: [ubuntu-latest, debian-latest]
     steps: 
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -16,6 +16,6 @@ jobs:
       - name: Sync files to hosting
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with: 
-          server: ftp.dm70016.domenomania.eu
-          username: github@kerso.dev
+          server: ssh.kerso.dev
+          username: debian
           password: ${{ secrets.ftp_pass }}
