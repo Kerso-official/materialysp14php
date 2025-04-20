@@ -58,7 +58,7 @@
     <div class="content">
         <h1 class="title">KLASA <?= htmlspecialchars($class) ?></h1>
         
-        <a href="../" style="color: aqua;">← Powrót do strony głównej</a>
+        <a href="../" style="color: aqua;">Powrot do strony glownej</a>
         <a href="?klasa=<?= urlencode($class) ?>&refresh=1" style="color: red; margin-left: 10px;">↻ Odśwież dane</a>
 
         <?php if ($sections): ?>
